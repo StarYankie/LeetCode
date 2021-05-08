@@ -1,6 +1,6 @@
 ## Problem
 
-https://leetcode-cn.com/problems/two-sum
+https://leetcode.com/submissions/detail/490401700/
 
 ## Problem Description
 

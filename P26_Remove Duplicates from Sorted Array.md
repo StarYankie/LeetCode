@@ -33,18 +33,21 @@ for (int i = 0; i < len; i++) {
 - Support Language: Java
 
 ```java
-import java.util.Map;
 class Solution {
     public int removeDuplicates(int[] nums) {
-        HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
         int size = 0;
-        int cursor = -1;
-        for (int i = 0; i < nums.length; i++) {
-            if (!m.containsKey(nums[i])) {
-                m.put(nums[i], 0);
-                nums[cursor++ + 1] = nums[i];
+        int cursor = 0;
+        int cursor2 = 1;
+        for (int i : nums) {
+            if (cursor == 0) {
                 size++;
-            } 
+            } else {
+                if (nums[cursor - 1] < nums[cursor]) {
+                    nums[cursor2++] = i;
+                    size++;
+                }
+            }
+            cursor++;
         }
         return size;
     }
